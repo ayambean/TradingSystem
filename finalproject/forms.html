@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumino - Forms</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><span>Trading</span>System</a>
+			<ul class="user-menu">
+				<li class="dropdown pull-right">
+					<lable class="" style="font-family: 'Microsoft YaHei';color: snow">当前用户名： </lable><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> User1 <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="LoginIn.html"><span class="glyphicon glyphicon-log-out"></span> 退出登录</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /.container-fluid -->
+</nav>
+
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+	<div>
+		<br>
+		<strong class="panel-heading" style="font-family: 'Microsoft YaHei'">当前时间:</strong>
+		<strong class="panel-heading" style="font-family: 'Microsoft YaHei'">17:25:11</strong>
+
+
+	</div>
+	<br>
+	<ul class="nav menu">
+		<li><a href="index.html"> <span class="glyphicon glyphicon-dashboard"></span>个人中心</a></li>
+		<li><a onclick="$('#test').hide(2000)"><span class="glyphicon glyphicon-th"></span> 业务操作</a></li>
+		<li><a ><span class="glyphicon glyphicon-stats"></span> 成绩显示</a></li>
+		<li><a ><span class="glyphicon glyphicon-list-alt"></span> 表类示范</a></li>
+		<li><a ><span class="glyphicon glyphicon-info-sign"></span> 帮助中心</a></li>
+		<li><a ><span class="glyphicon glyphicon-pencil"></span> 其他</a></li>
+		<li class="active"><a href="forms.html"><span class="glyphicon glyphicon-fire"></span> 查询中心</a></li>
+
+		<li role="presentation" class="divider"></li>
+		<li><a href="LoginIn.html"><span class="glyphicon glyphicon-user"></span> 重新登陆</a></li>
+	</ul>
+	<div class="attribution">国际贸易模拟平台</div>
+</div><!--/.sidebar-->
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">查询中心</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="panel panel-default">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="">商品</a></li>
+					<li class="dropdown ">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">费率</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#" onclick="$('#searchcom').hide();$('#searchclass').show()">货物等级表</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">海洋运价表</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">海关税则表</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">汇率表</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div><!--/.row-->
+				
+		
+		<div id="searchcom" class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">商品资料查询中心</div>
+				<div class="panel-body">
+					<div class="col-md-6">
+						<form role="form">
+
+							<div class="form-group">
+								<label>如果您希望根据商品大类查询，请选择：</label>
+								<select class="form-control">
+									<option>Option 1</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+									<option>Option 4</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>根据商品货号查询：</label>
+								<input class="form-control" placeholder="商品货号">
+							</div>
+
+							<!--<div class="form-group">-->
+							<!--<label>Password</label>-->
+							<!--<input type="password" class="form-control">-->
+							<!--</div>-->
+							<!---->
+							<!--<div class="form-group checkbox">-->
+							<!--<label>-->
+							<!--<input type="checkbox">Remember me</label>-->
+							<!--</div>-->
+
+							<!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+							<!--&lt;!&ndash;<label>File input</label>&ndash;&gt;-->
+							<!--&lt;!&ndash;<input type="file">&ndash;&gt;-->
+							<!--&lt;!&ndash;<p class="help-block">Example block-level help text here.</p>&ndash;&gt;-->
+							<!--&lt;!&ndash;</div>&ndash;&gt;-->
+							<!---->
+							<!--<div class="form-group">-->
+							<!--<label>Text area</label>-->
+							<!--<textarea class="form-control" rows="3"></textarea>-->
+							<!--</div>-->
+							<!---->
+							<!--<label>Validation</label>-->
+							<!--<div class="form-group has-success">-->
+							<!--<input class="form-control" placeholder="Success">-->
+							<!--</div>-->
+							<!--<div class="form-group has-warning">-->
+							<!--<input class="form-control" placeholder="Warning">-->
+							<!--</div>-->
+							<!--<div class="form-group has-error">-->
+							<!--<input class="form-control" placeholder="Error">-->
+							<!--</div>-->
+							<!--</form>-->
+							<!--</div>-->
+							<!--<div class="col-md-6">-->
+							<!---->
+							<!--<div class="form-group">-->
+							<!--<label>Checkboxes</label>-->
+							<!--<div class="checkbox">-->
+							<!--<label>-->
+							<!--<input type="checkbox" value="">Checkbox 1-->
+							<!--</label>-->
+							<!--</div>-->
+							<!--<div class="checkbox">-->
+							<!--<label>-->
+							<!--<input type="checkbox" value="">Checkbox 2-->
+							<!--</label>-->
+							<!--</div>-->
+							<!--<div class="checkbox">-->
+							<!--<label>-->
+							<!--<input type="checkbox" value="">Checkbox 3-->
+							<!--</label>-->
+							<!--</div>-->
+							<!--<div class="checkbox">-->
+							<!--<label>-->
+							<!--<input type="checkbox" value="">Checkbox 4-->
+							<!--</label>-->
+							<!--</div>-->
+							<!--</div>-->
+							<!---->
+							<!--<div class="form-group">-->
+							<!--<label>Radio Buttons</label>-->
+							<!--<div class="radio">-->
+							<!--<label>-->
+							<!--<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio Button 1-->
+							<!--</label>-->
+							<!--</div>-->
+							<!--<div class="radio">-->
+							<!--<label>-->
+							<!--<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio Button 2-->
+							<!--</label>-->
+							<!--</div>-->
+							<!--<div class="radio">-->
+							<!--<label>-->
+							<!--<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio Button 3-->
+							<!--</label>-->
+							<!--</div>-->
+							<!--<div class="radio">-->
+							<!--<label>-->
+							<!--<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio Button 4-->
+							<!--</label>-->
+							<!--</div>-->
+							<!--</div>-->
+							<!---->
+							<!--<div class="form-group">-->
+							<!--<label>Selects</label>-->
+							<!--<select class="form-control">-->
+							<!--<option>Option 1</option>-->
+							<!--<option>Option 2</option>-->
+							<!--<option>Option 3</option>-->
+							<!--<option>Option 4</option>-->
+							<!--</select>-->
+							<!--</div>-->
+							<!---->
+							<!--<div class="form-group">-->
+							<!--<label>Multiple Selects</label>-->
+							<!--<select multiple class="form-control">-->
+							<!--<option>Option 1</option>-->
+							<!--<option>Option 2</option>-->
+							<!--<option>Option 3</option>-->
+							<!--<option>Option 4</option>-->
+							<!--</select>-->
+							<!--</div>-->
+							<!--</div>-->
+							<button type="submit" class="btn btn-primary">开始查询</button>
+							<button type="reset" class="btn btn-default">清除</button>
+
+						</form>
+					</div>
+					<div class="col-md-6">
+						<p>
+							注意：本系统只能按照商品大类或货号查询，不得同时输入！
+						</p>
+						<p>
+							否则将报错！
+						</p>
+					</div>
+				</div>
+			</div><!-- /.col-->
+		</div><!-- /.row -->
+
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">查询结果</div>
+				<div class="panel-body">
+					<table data-toggle="table" data-url="tables/data2.json" >
+						<thead>
+						<tr>
+							<th data-field="id" data-align="right">商品大类</th>
+							<th data-field="name">商品总重量</th>
+							<th data-field="price">商品id</th>
+							<th data-field="price">商品名称</th>
+							<th data-field="price">商品包装</th>
+							<th data-field="price">商品包装尺寸</th>
+							<th data-field="price">商品价格</th>
+
+						</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div id="searchclass" class="row" style="display: none">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">货物等级表</div>
+					<div class="panel-body">
+						<div class="col-md-6">
+							<form role="form">
+
+								<div class="form-group">
+									<label>请选择查询方式：</label>
+									<select class="form-control">
+										<option>英文品名</option>
+										<option>英文品名开头字母</option>
+
+									</select>
+								</div>
+								<div class="form-group">
+									<label>请输入查询条件：</label>
+									<input class="form-control" placeholder="条件">
+								</div>
+
+								<!--<div class="form-group">-->
+								<!--<label>Password</label>-->
+								<!--<input type="password" class="form-control">-->
+								<!--</div>-->
+								<!---->
+								<!--<div class="form-group checkbox">-->
+								<!--<label>-->
+								<!--<input type="checkbox">Remember me</label>-->
+								<!--</div>-->
+
+								<!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+								<!--&lt;!&ndash;<label>File input</label>&ndash;&gt;-->
+								<!--&lt;!&ndash;<input type="file">&ndash;&gt;-->
+								<!--&lt;!&ndash;<p class="help-block">Example block-level help text here.</p>&ndash;&gt;-->
+								<!--&lt;!&ndash;</div>&ndash;&gt;-->
+								<!---->
+								<!--<div class="form-group">-->
+								<!--<label>Text area</label>-->
+								<!--<textarea class="form-control" rows="3"></textarea>-->
+								<!--</div>-->
+								<!---->
+								<!--<label>Validation</label>-->
+								<!--<div class="form-group has-success">-->
+								<!--<input class="form-control" placeholder="Success">-->
+								<!--</div>-->
+								<!--<div class="form-group has-warning">-->
+								<!--<input class="form-control" placeholder="Warning">-->
+								<!--</div>-->
+								<!--<div class="form-group has-error">-->
+								<!--<input class="form-control" placeholder="Error">-->
+								<!--</div>-->
+								<!--</form>-->
+								<!--</div>-->
+								<!--<div class="col-md-6">-->
+								<!---->
+								<!--<div class="form-group">-->
+								<!--<label>Checkboxes</label>-->
+								<!--<div class="checkbox">-->
+								<!--<label>-->
+								<!--<input type="checkbox" value="">Checkbox 1-->
+								<!--</label>-->
+								<!--</div>-->
+								<!--<div class="checkbox">-->
+								<!--<label>-->
+								<!--<input type="checkbox" value="">Checkbox 2-->
+								<!--</label>-->
+								<!--</div>-->
+								<!--<div class="checkbox">-->
+								<!--<label>-->
+								<!--<input type="checkbox" value="">Checkbox 3-->
+								<!--</label>-->
+								<!--</div>-->
+								<!--<div class="checkbox">-->
+								<!--<label>-->
+								<!--<input type="checkbox" value="">Checkbox 4-->
+								<!--</label>-->
+								<!--</div>-->
+								<!--</div>-->
+								<!---->
+								<!--<div class="form-group">-->
+								<!--<label>Radio Buttons</label>-->
+								<!--<div class="radio">-->
+								<!--<label>-->
+								<!--<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio Button 1-->
+								<!--</label>-->
+								<!--</div>-->
+								<!--<div class="radio">-->
+								<!--<label>-->
+								<!--<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio Button 2-->
+								<!--</label>-->
+								<!--</div>-->
+								<!--<div class="radio">-->
+								<!--<label>-->
+								<!--<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio Button 3-->
+								<!--</label>-->
+								<!--</div>-->
+								<!--<div class="radio">-->
+								<!--<label>-->
+								<!--<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio Button 4-->
+								<!--</label>-->
+								<!--</div>-->
+								<!--</div>-->
+								<!---->
+								<!--<div class="form-group">-->
+								<!--<label>Selects</label>-->
+								<!--<select class="form-control">-->
+								<!--<option>Option 1</option>-->
+								<!--<option>Option 2</option>-->
+								<!--<option>Option 3</option>-->
+								<!--<option>Option 4</option>-->
+								<!--</select>-->
+								<!--</div>-->
+								<!---->
+								<!--<div class="form-group">-->
+								<!--<label>Multiple Selects</label>-->
+								<!--<select multiple class="form-control">-->
+								<!--<option>Option 1</option>-->
+								<!--<option>Option 2</option>-->
+								<!--<option>Option 3</option>-->
+								<!--<option>Option 4</option>-->
+								<!--</select>-->
+								<!--</div>-->
+								<!--</div>-->
+								<button type="submit" class="btn btn-primary">开始查询</button>
+								<button type="reset" class="btn btn-default">清除</button>
+
+							</form>
+						</div>
+						<div class="col-md-6">
+							<p>
+								选择是按照英文品名开头字母或者英文品名进行查询。
+							</p>
+							<p>
+								若选择英文品名开头字母查询，请输入开头字母。
+							</p>
+							<p>
+								若选择英文品名查询，请输入英文品名关键字。
+							</p>
+						</div>
+					</div>
+				</div><!-- /.col-->
+			</div><!-- /.row -->
+
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">查询结果</div>
+					<div class="panel-body">
+						<table data-toggle="table" data-url="tables/data2.json" >
+							<thead>
+							<tr>
+								<th data-field="id" data-align="right">商品大类</th>
+								<th data-field="name">商品总重量</th>
+								<th data-field="price">商品id</th>
+								<th data-field="price">商品名称</th>
+								<th data-field="price">商品包装</th>
+								<th data-field="price">商品包装尺寸</th>
+								<th data-field="price">商品价格</th>
+
+							</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/.main-->
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap-table.js"></script>
+	<script>
+		!function ($) {
+			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
+				$(this).find('em:first').toggleClass("glyphicon-minus");	  
+			}); 
+			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
+</body>
+
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>国际贸易模拟系统 个人中心</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body >
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><span>Trading</span>System</a>
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<lable class="" style="font-family: 'Microsoft YaHei';color: snow">当前用户名： </lable><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> User1 <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="LoginIn.html"><span class="glyphicon glyphicon-log-out"></span> 退出登录</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div><!-- /.container-fluid -->
+	</nav>
+		
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		<div>
+			<br>
+			<strong class="panel-heading" style="font-family: 'Microsoft YaHei'">当前时间:</strong>
+			<strong class="panel-heading" style="font-family: 'Microsoft YaHei'">17:25:11</strong>
+
+
+		</div>
+		<br>
+		<ul class="nav menu">
+			<li class="active"><a onclick="$('#test').show(2000)"> <span class="glyphicon glyphicon-dashboard"></span>个人中心</a></li>
+			<li><a onclick="$('#test').hide(2000)"><span class="glyphicon glyphicon-th"></span> 业务操作</a></li>
+			<li><a href=""><span class="glyphicon glyphicon-stats"></span> 成绩显示</a></li>
+			<li><a href=""><span class="glyphicon glyphicon-list-alt"></span> 表类示范</a></li>
+			<li><a href=""><span class="glyphicon glyphicon-info-sign"></span> 帮助中心</a></li>
+			<li><a href=""><span class="glyphicon glyphicon-pencil"></span> 其他</a></li>
+			<li><a href="forms.html"><span class="glyphicon glyphicon-fire"></span> 查询中心</a></li>
+
+			<li role="presentation" class="divider"></li>
+			<li><a href="LoginIn.html"><span class="glyphicon glyphicon-user"></span> 重新登陆</a></li>
+		</ul>
+		<div class="attribution">国际贸易模拟平台</div>
+	</div><!--/.sidebar-->
+		
+	<div id="test" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei'">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">个人中心</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row" style="font-family: 'Microsoft YaHei'">
+			<div class="col-lg-12">
+				<h1 class="page-header">个人中心</h1>
+			</div>
+		</div><!--/.row-->
+
+		<!--当前统计信息栏-->
+		<div class="col-md-8" style="font-family: 'Microsoft YaHei'">
+			<div class="col-md-4">
+				<div class="panel panel-red panel-widget ">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<em class="glyphicon glyphicon-ban-circle glyphicon-l"></em>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="text-info">未完成操作步骤</div>
+							<div class="large">1</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-orange panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<em class="glyphicon glyphicon-star glyphicon-l"></em>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="text-muted">已完成步骤</div>
+							<div class="large">3</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-teal panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<em class="glyphicon glyphicon-record glyphicon-l"></em>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="text-muted">最近一次评分</div>
+							<div class="large">93</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br><br><br><br><br>
+			<!--教师操作评语-->
+			<div class="row" style="font-family: 'Microsoft YaHei'">
+				<div class="panel panel-default chat">
+					<div class="panel-heading" id="1" style="font-family: 'Microsoft YaHei'"><span class="glyphicon glyphicon-comment"></span> 教师最新操作评语</div>
+
+					<div class="panel-body" style="height: 300px">
+						<br><br>
+						<ul>
+							<li class="left clearfix">
+								<span class="chat-img pull-left">
+									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
+								</span>
+								<div class="chat-body clearfix">
+									<div class="header">
+										<strong class="primary-font">询盘</strong> <small class="text-muted">第一次操作</small>
+									</div>
+									<p>
+										这次操作你对于国际贸易已经有了很大程度的全新认识
+									</p>
+								</div>
+							</li>
+							<!--在left控制图片位置-->
+							<li class="left clearfix">
+								<span class="chat-img pull-left">
+									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
+								</span>
+								<div class="chat-body clearfix">
+									<div class="header">
+										<strong class="pull-left primary-font">发盘</strong> <small class="text-muted">第二次操作</small>
+									</div>
+									<p>
+										这次操作你对于国际贸易已经有了很大程度的全新认识
+									</p>
+								</div>
+							</li>
+							<li class="left clearfix">
+								<span class="chat-img pull-left">
+									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
+								</span>
+								<div class="chat-body clearfix">
+									<div class="header">
+										<strong class="primary-font">发送订单</strong> <small class="text-muted">第三次操作</small>
+									</div>
+									<p>
+										这次操作你对于国际贸易已经有了很大程度的全新认识
+									</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!--<div class="panel-footer">-->
+					<!--<div class="input-group">-->
+					<!--<input id="btn-input" type="text" class="form-control input-md" placeholder="Type your message here..." />-->
+					<!--<span class="input-group-btn">-->
+					<!--<button class="btn btn-success btn-md" id="btn-chat">Send</button>-->
+					<!--</span>-->
+					<!--</div>-->
+					<!--</div>-->
+				</div>
+
+			</div>
+			<!--最新参考答案-->
+			<div class="row">
+				<div class="panel panel-default chat">
+					<div class="panel-heading" id="" style="font-family: 'Microsoft YaHei'"><span class="glyphicon glyphicon-comment"></span> 最新参考答案</div>
+
+					<div class="panel-body" style="height: 300px">
+						<br><br>
+						<ul>
+							<li class="left clearfix">
+								<span class="chat-img pull-left">
+									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
+								</span>
+								<div class="chat-body clearfix">
+									<div class="header">
+										<strong class="primary-font">询盘</strong> <small class="text-muted">第一次操作</small>
+									</div>
+									<a herf="#">第一次参考答案</a>
+								</div>
+							</li>
+							<!--在left控制图片位置-->
+							<li class="left clearfix">
+								<span class="chat-img pull-left">
+									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
+								</span>
+								<div class="chat-body clearfix">
+									<div class="header">
+										<strong class="pull-left primary-font">发盘</strong> <small class="text-muted">第二次操作</small>
+									</div>
+									<a herf="#">第二次参考答案</a>
+								</div>
+							</li>
+							<li class="left clearfix">
+								<span class="chat-img pull-left">
+									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
+								</span>
+								<div class="chat-body clearfix">
+									<div class="header">
+										<strong class="primary-font">发送订单</strong> <small class="text-muted">第三次操作</small>
+									</div>
+									<a herf="#">第三次参考答案</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!--<div class="panel-footer">-->
+					<!--<div class="input-group">-->
+					<!--<input id="btn-input" type="text" class="form-control input-md" placeholder="Type your message here..." />-->
+					<!--<span class="input-group-btn">-->
+					<!--<button class="btn btn-success btn-md" id="btn-chat">Send</button>-->
+					<!--</span>-->
+					<!--</div>-->
+					<!--</div>-->
+				</div>
+
+			</div><!--/.col-->
+
+			<!--<div class="col-xs-12 col-md-6 col-lg-3">-->
+				<!--<div class="panel panel-default panel-widget">-->
+					<!--<div class="row no-padding">-->
+						<!--<div class="col-sm-3 col-lg-5 widget-left">-->
+							<!--<em class="glyphicon glyphicon-stats glyphicon-l"></em>-->
+						<!--</div>-->
+						<!--<div class="col-sm-9 col-lg-7 widget-right">-->
+							<!--<div class="text-muted">当前正在操作步骤</div>-->
+							<!--<div class="large">3</div>-->
+
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+		</div><!--/.row-->
+
+
+
+		<div class="col-md-3 col-md-offset-1" style="font-family: 'Microsoft YaHei'">
+
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-body easypiechart-panel">
+						<h4 style="font-family: 'Microsoft YaHei'">当前训练完成度</h4>
+						<div class="easypiechart" id="easypiechart-red" data-percent="27" ><span class="percent">27%</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row panel-blue">
+				<div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-calendar"></span>日历</div>
+				<div class="panel-body">
+					<div id="calendar"></div>
+				</div>
+			</div>
+			<br>
+			<div class="row" style="font-family: 'Microsoft YaHei'">
+				<div class="panel panel-blue">
+					<div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-check"></span>尚未完成的操作列表</div>
+					<div class="panel-body">
+						<ul class="todo-list">
+						<li class="todo-list-item">
+							<label >询问供应商价格</label>
+
+								<div class="pull-right action-buttons">
+									<a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+									<a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+								</div>
+						</li>
+							<li class="todo-list-item">
+								<label >和供应商签订合同</label>
+
+								<div class="pull-right action-buttons">
+									<a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+									<a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+								</div>
+							</li>
+							<li class="todo-list-item">
+									<label >准备货运船只</label>
+
+								<div class="pull-right action-buttons">
+									<a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+									<a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+								</div>
+							</li>
+							<li class="todo-list-item">
+									<label >向海关申报所需出口物品</label>
+
+								<div class="pull-right action-buttons">
+									<a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+									<a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="panel-footer">
+
+					</div>
+				</div>
+								
+			</div><!--/.col-->
+		</div><!--/.row-->
+	</div>	<!--/.main-->
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script>
+		$('#calendar').datepicker({
+		});
+
+		!function ($) {
+		    $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
+		        $(this).find('em:first').toggleClass("glyphicon-minus");      
+		    }); 
+		    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
+</body>
+
+</html>
