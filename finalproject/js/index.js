@@ -2,7 +2,7 @@
  * Created by home on 2016-4-13.
  */
 
-var ip = "http://192.168.3.11:8080/";
+var ip = "http://localhost:8080/";
 var pageusername;
 
 function pageonload(){

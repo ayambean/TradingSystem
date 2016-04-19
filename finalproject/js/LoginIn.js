@@ -2,9 +2,10 @@
  * Created by home on 2016-4-12.
  */
 
-var ip = "http://192.168.3.11:8080/";
+var ip = "http://localhost:8080/";
 
 $("#confirm").click(function (){
+    alert("hehe");
 
     var realurl =ip+"TradingSystem/user_auth1.action?";
 
