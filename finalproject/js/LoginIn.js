@@ -1,41 +1,38 @@
 /**
- * Created by shibowen on 16/4/8.
+ * Created by home on 2016-4-12.
  */
 
-var ip ="http://localhost:8080/"
+var ip = "http://192.168.3.11:8080/";
 
-$("#confirmbtn").click(function(){
-    alert("1");
+$("#confirm").click(function (){
 
-    var realurl = ip+"TradingSystem/user_auth1.action?";
-    //  alert("url"+realurl);
+    var realurl =ip+"TradingSystem/user_auth1.action?";
+
+
     $.ajax({
-        cache:false,
-        type : "POST",
-        url : realurl,
+        type: "GET",
+        async:false,
+        url:realurl,
         data:{
             username:$("#username").val(),
             password:$("#userpassword").val()
         },
-        dataType : 'json',
-        // jsonp: "callback",
-        // jsonpCallback: "callback",
-        success : function (data) {
+        dataType:"jsonp",
+        jsonp:"callback",
+        success:function (data) {
+            //alert("data"+data.result);
 
-            //    alert("data="+data.result);
-            if(data.result=="success"){
-                alert("data="+data);
-
-                window.location.assign("webpage.html");
-            }else{
-
-                     alert("error");
-                // $("#LoginState").css("display","inline");
-                // $("#tip").html("错误的用户名或密码");
+            if(data.result=="登录成功！"){
+                alert("登陆成功");
+                window.location.href ="index.html?user="+$("#username").val();
+            }else {
+                alert("您的用户名或密码输入错误！");
+                $("#loginstage").css("display","inline");
             }
-
+        },
+        error:function () {
+            alert("AJAX请求失败");
         }
-    });
+    })
 
 });
-

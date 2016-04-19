@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>国际贸易模拟系统 个人中心</title>
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/datepicker3.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
+<link href="../../../../Downloads/finalproject/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../../Downloads/finalproject/css/datepicker3.css" rel="stylesheet">
+<link href="../../../../Downloads/finalproject/css/styles.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
-<script src="js/html5shiv.js"></script>
-<script src="js/respond.min.js"></script>
-<![endif]-->
+	<script src="js/html5shiv.js"></script>
+	<script src="../../../../Downloads/finalproject/js/respond.min.js"></script>
+	<![endif]-->
 
 </head>
-<!--shiboen version has connected to github-->
+
 <body >
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
@@ -29,7 +29,7 @@
 				<a class="navbar-brand" href="#"><span>Trading</span>System</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
-						<lable class="" style="font-family: 'Microsoft YaHei';color: snow">当前用户名： </lable><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> User1 <span class="caret"></span></a>
+						<lable class="" style="font-family: 'Microsoft YaHei';color: snow">当前用户名： </lable><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><a id="topusername">N/A</a>  <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="LoginIn.html"><span class="glyphicon glyphicon-log-out"></span> 退出登录</a></li>
 						</ul>
@@ -86,8 +86,8 @@
 							<em class="glyphicon glyphicon-ban-circle glyphicon-l"></em>
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="text-info">未完成操作步骤</div>
-							<div class="large">1</div>
+							<div class="text-info">最新操作阶段</div>
+							<div id="laststagenumber" class="large">N/A</div>
 
 						</div>
 					</div>
@@ -100,8 +100,8 @@
 							<em class="glyphicon glyphicon-star glyphicon-l"></em>
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="text-muted">已完成步骤</div>
-							<div class="large">3</div>
+							<div class="text-muted">最新操作要求</div>
+							<div id="laststrequest" class="large">N/A</div>
 
 						</div>
 					</div>
@@ -132,7 +132,7 @@
 						<ul>
 							<li class="left clearfix">
 								<span class="chat-img pull-left">
-									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
+									<!--<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>-->
 								</span>
 								<div class="chat-body clearfix">
 									<div class="header">
@@ -146,7 +146,7 @@
 							<!--在left控制图片位置-->
 							<li class="left clearfix">
 								<span class="chat-img pull-left">
-									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
+									<!--<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>-->
 								</span>
 								<div class="chat-body clearfix">
 									<div class="header">
@@ -159,7 +159,7 @@
 							</li>
 							<li class="left clearfix">
 								<span class="chat-img pull-left">
-									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
+									<!--<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>-->
 								</span>
 								<div class="chat-body clearfix">
 									<div class="header">
@@ -194,7 +194,7 @@
 						<ul>
 							<li class="left clearfix">
 								<span class="chat-img pull-left">
-									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
+									<!--<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>-->
 								</span>
 								<div class="chat-body clearfix">
 									<div class="header">
@@ -204,28 +204,28 @@
 								</div>
 							</li>
 							<!--在left控制图片位置-->
-							<li class="left clearfix">
-								<span class="chat-img pull-left">
-									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
-								</span>
-								<div class="chat-body clearfix">
-									<div class="header">
-										<strong class="pull-left primary-font">发盘</strong> <small class="text-muted">第二次操作</small>
-									</div>
-									<a herf="#">第二次参考答案</a>
-								</div>
-							</li>
-							<li class="left clearfix">
-								<span class="chat-img pull-left">
-									<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>
-								</span>
-								<div class="chat-body clearfix">
-									<div class="header">
-										<strong class="primary-font">发送订单</strong> <small class="text-muted">第三次操作</small>
-									</div>
-									<a herf="#">第三次参考答案</a>
-								</div>
-							</li>
+							<!--<li class="left clearfix">-->
+								<!--<span class="chat-img pull-left">-->
+									<!--<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>-->
+								<!--</span>-->
+								<!--<div class="chat-body clearfix">-->
+									<!--<div class="header">-->
+										<!--<strong class="pull-left primary-font">发盘</strong> <small class="text-muted">第二次操作</small>-->
+									<!--</div>-->
+									<!--<a herf="#">第二次参考答案</a>-->
+								<!--</div>-->
+							<!--</li>-->
+							<!--<li class="left clearfix">-->
+								<!--<span class="chat-img pull-left">-->
+									<!--<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>-->
+								<!--</span>-->
+								<!--<div class="chat-body clearfix">-->
+									<!--<div class="header">-->
+										<!--<strong class="primary-font">发送订单</strong> <small class="text-muted">第三次操作</small>-->
+									<!--</div>-->
+									<!--<a herf="#">第三次参考答案</a>-->
+								<!--</div>-->
+							<!--</li>-->
 						</ul>
 					</div>
 
@@ -261,21 +261,21 @@
 
 		<div class="col-md-3 col-md-offset-1" style="font-family: 'Microsoft YaHei'">
 
-			<div class="row">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4 style="font-family: 'Microsoft YaHei'">当前训练完成度</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="27" ><span class="percent">27%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row panel-blue">
-				<div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-calendar"></span>日历</div>
-				<div class="panel-body">
-					<div id="calendar"></div>
-				</div>
-			</div>
+			<!--<div class="row">-->
+				<!--<div class="panel panel-default">-->
+					<!--<div class="panel-body easypiechart-panel">-->
+						<!--<h4 style="font-family: 'Microsoft YaHei'">当前训练完成度</h4>-->
+						<!--<div class="easypiechart" id="easypiechart-red" data-percent="27" ><span class="percent">27%</span>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row panel-blue">-->
+				<!--<div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-calendar"></span>日历</div>-->
+				<!--<div class="panel-body">-->
+					<!--<div id="calendar"></div>-->
+				<!--</div>-->
+			<!--</div>-->
 			<br>
 			<div class="row" style="font-family: 'Microsoft YaHei'">
 				<div class="panel panel-blue">
@@ -325,13 +325,13 @@
 		</div><!--/.row-->
 	</div>	<!--/.main-->
 
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="../../../../Downloads/finalproject/js/jquery-1.11.1.min.js"></script>
+	<script src="../../../../Downloads/finalproject/js/bootstrap.js"></script>
+	<script src="../../../../Downloads/finalproject/js/chart.min.js"></script>
+	<script src="../../../../Downloads/finalproject/js/chart-data.js"></script>
+	<script src="../../../../Downloads/finalproject/js/easypiechart.js"></script>
+	<script src="../../../../Downloads/finalproject/js/easypiechart-data.js"></script>
+	<script src="../../../../Downloads/finalproject/js/bootstrap-datepicker.js"></script>
 	<script>
 		$('#calendar').datepicker({
 		});
@@ -349,7 +349,8 @@
 		$(window).on('resize', function () {
 		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 		})
-	</script>	
+	</script>
+	<script src="js/index.js"></script>
 </body>
 
 </html>
