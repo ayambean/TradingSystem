@@ -49,13 +49,13 @@
 		</div>
 		<br>
 		<ul class="nav menu">
-			<li class="active"><a onclick="showmainpage()"> <span class="glyphicon glyphicon-dashboard"></span>个人中心</a></li>
-			<li><a onclick=""><span class="glyphicon glyphicon-th"></span> 业务操作</a></li>
-			<li><a onclick="showgradepage()"><span class="glyphicon glyphicon-stats"></span> 成绩显示</a></li>
-			<li><a href=""><span class="glyphicon glyphicon-list-alt"></span> 表类示范</a></li>
-			<li><a href=""><span class="glyphicon glyphicon-info-sign"></span> 帮助中心</a></li>
-			<li><a href=""><span class="glyphicon glyphicon-pencil"></span> 其他</a></li>
-			<li><a onclick="showsearchpage()"><span class="glyphicon glyphicon-fire"></span> 查询中心</a></li>
+			<li id="limainpage" class="active"><a onclick="showmainpage()"> <span class="glyphicon glyphicon-dashboard"></span>个人中心</a></li>
+			<li id="libussinesspage"><a onclick=""><span class="glyphicon glyphicon-th"></span> 业务操作</a></li>
+			<li id="ligradepage"><a onclick="showgradepage()"><span class="glyphicon glyphicon-stats"></span> 成绩进度</a></li>
+			<li id="litablepage"><a href=""><span class="glyphicon glyphicon-list-alt"></span> 表类示范</a></li>
+			<li id="lihelppage"><a href=""><span class="glyphicon glyphicon-info-sign"></span> 帮助中心</a></li>
+			<li id="liotherpage"><a href=""><span class="glyphicon glyphicon-pencil"></span> 其他</a></li>
+			<li id="lisearchpage"><a onclick="showsearchpage()"><span class="glyphicon glyphicon-fire"></span> 查询中心</a></li>
 
 			<li role="presentation" class="divider"></li>
 			<li><a href="LoginIn.html"><span class="glyphicon glyphicon-user"></span> 重新登陆</a></li>
@@ -129,7 +129,7 @@
 
 					<div class="panel-body" style="height: 300px">
 						<br><br>
-						<ul>
+						<ul id="maindianpinginsertpoint">
 							<li class="left clearfix">
 								<span class="chat-img pull-left">
 									<!--<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>-->
@@ -313,14 +313,14 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-				<li class="active">当前成绩</li>
+				<li class="active">当前成绩进度</li>
 			</ol>
 		</div><!--/.row-->
 		<br><br>
 
-		<div id="searchcom" class="row">
+		<div id="11" class="row">
 
-			<div class="col-lg-12">
+			<div class="col-lg-6">
 				<div class="panel panel-default">
 					<div class="panel-heading"><label id="gradeheading">N/A</label></div>
 					<div class="panel-body">
@@ -340,6 +340,32 @@
 							<!--<tr>-->
 								<!--<td>Sachin</td>-->
 								<!--<td>Mumbai</td>-->
+							<!--</tr>-->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading"><label id="processheading">N/A</label></div>
+					<div class="panel-body">
+						<table class="table">
+							<caption>进度表单</caption>
+							<thead>
+							<tr>
+								<th>操作步骤</th>
+								<th>当前状态</th>
+							</tr>
+							</thead>
+							<tbody id="processinsertpoint">
+							<!--<tr>-->
+							<!--<td>操作1</td>-->
+							<!--<td>N/A</td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+							<!--<td>Sachin</td>-->
+							<!--<td>Mumbai</td>-->
 							<!--</tr>-->
 							</tbody>
 						</table>
