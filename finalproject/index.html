@@ -31,6 +31,7 @@
 					<li class="dropdown pull-right">
 						<lable class="" style="font-family: 'Microsoft YaHei';color: snow">当前用户名： </lable><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><a id="topusername">N/A</a>  <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
+							<li><a onclick="showchangepasswordpage()" ><span class="glyphicon glyphicon-pencil"></span> 修改密码</a></li>
 							<li><a href="LoginIn.html"><span class="glyphicon glyphicon-log-out"></span> 退出登录</a></li>
 						</ul>
 					</li>
@@ -50,7 +51,7 @@
 		<br>
 		<ul class="nav menu">
 			<li id="limainpage" class="active"><a onclick="showmainpage()"> <span class="glyphicon glyphicon-dashboard"></span>个人中心</a></li>
-			<li id="libussinesspage"><a onclick=""><span class="glyphicon glyphicon-th"></span> 业务操作</a></li>
+			<li id="libussinesspage"><a onclick="bussinesspage()"><span class="glyphicon glyphicon-th"></span> 业务操作</a></li>
 			<li id="ligradepage"><a onclick="showgradepage()"><span class="glyphicon glyphicon-stats"></span> 成绩进度</a></li>
 			<li id="litablepage"><a href=""><span class="glyphicon glyphicon-list-alt"></span> 表类示范</a></li>
 			<li id="lihelppage"><a href=""><span class="glyphicon glyphicon-info-sign"></span> 帮助中心</a></li>
@@ -63,7 +64,7 @@
 		<div class="attribution">国际贸易模拟平台</div>
 	</div><!--/.sidebar-->
 		
-	<div id="mainpage" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei'">
+	<div id="mainpage" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei';">
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
@@ -130,46 +131,46 @@
 					<div class="panel-body" style="height: 300px">
 						<br><br>
 						<ul id="maindianpinginsertpoint">
-							<li class="left clearfix">
-								<span class="chat-img pull-left">
-									<!--<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>-->
-								</span>
-								<div class="chat-body clearfix">
-									<div class="header">
-										<strong class="primary-font">询盘</strong> <small class="text-muted">第一次操作</small>
-									</div>
-									<p>
-										这次操作你对于国际贸易已经有了很大程度的全新认识
-									</p>
-								</div>
-							</li>
-							<!--在left控制图片位置-->
-							<li class="left clearfix">
-								<span class="chat-img pull-left">
-									<!--<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>-->
-								</span>
-								<div class="chat-body clearfix">
-									<div class="header">
-										<strong class="pull-left primary-font">发盘</strong> <small class="text-muted">第二次操作</small>
-									</div>
-									<p>
-										这次操作你对于国际贸易已经有了很大程度的全新认识
-									</p>
-								</div>
-							</li>
-							<li class="left clearfix">
-								<span class="chat-img pull-left">
-									<!--<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>-->
-								</span>
-								<div class="chat-body clearfix">
-									<div class="header">
-										<strong class="primary-font">发送订单</strong> <small class="text-muted">第三次操作</small>
-									</div>
-									<p>
-										这次操作你对于国际贸易已经有了很大程度的全新认识
-									</p>
-								</div>
-							</li>
+							<!--<li class="left clearfix">-->
+								<!--<span class="chat-img pull-left">-->
+									<!--&lt;!&ndash;<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>&ndash;&gt;-->
+								<!--</span>-->
+								<!--<div class="chat-body clearfix">-->
+									<!--<div class="header">-->
+										<!--<strong class="primary-font">询盘</strong> <small class="text-muted">第一次操作</small>-->
+									<!--</div>-->
+									<!--<p>-->
+										<!--这次操作你对于国际贸易已经有了很大程度的全新认识-->
+									<!--</p>-->
+								<!--</div>-->
+							<!--</li>-->
+							<!--&lt;!&ndash;在left控制图片位置&ndash;&gt;-->
+							<!--<li class="left clearfix">-->
+								<!--<span class="chat-img pull-left">-->
+									<!--&lt;!&ndash;<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>&ndash;&gt;-->
+								<!--</span>-->
+								<!--<div class="chat-body clearfix">-->
+									<!--<div class="header">-->
+										<!--<strong class="pull-left primary-font">发盘</strong> <small class="text-muted">第二次操作</small>-->
+									<!--</div>-->
+									<!--<p>-->
+										<!--这次操作你对于国际贸易已经有了很大程度的全新认识-->
+									<!--</p>-->
+								<!--</div>-->
+							<!--</li>-->
+							<!--<li class="left clearfix">-->
+								<!--<span class="chat-img pull-left">-->
+									<!--&lt;!&ndash;<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>&ndash;&gt;-->
+								<!--</span>-->
+								<!--<div class="chat-body clearfix">-->
+									<!--<div class="header">-->
+										<!--<strong class="primary-font">发送订单</strong> <small class="text-muted">第三次操作</small>-->
+									<!--</div>-->
+									<!--<p>-->
+										<!--这次操作你对于国际贸易已经有了很大程度的全新认识-->
+									<!--</p>-->
+								<!--</div>-->
+							<!--</li>-->
 						</ul>
 					</div>
 
@@ -187,22 +188,22 @@
 			<!--最新参考答案-->
 			<div class="row">
 				<div class="panel panel-default chat">
-					<div class="panel-heading" id="" style="font-family: 'Microsoft YaHei'"><span class="glyphicon glyphicon-comment"></span> 最新参考答案</div>
+					<div class="panel-heading" id="222" style="font-family: 'Microsoft YaHei'"><span class="glyphicon glyphicon-comment"></span> 最新参考答案</div>
 
 					<div class="panel-body" style="height: 300px">
 						<br><br>
-						<ul>
-							<li class="left clearfix">
-								<span class="chat-img pull-left">
-									<!--<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>-->
-								</span>
-								<div class="chat-body clearfix">
-									<div class="header">
-										<strong class="primary-font">询盘</strong> <small class="text-muted">第一次操作</small>
-									</div>
-									<a herf="#">第一次参考答案</a>
-								</div>
-							</li>
+						<ul id="mainreferinsertpoint">
+							<!--<li class="left clearfix">-->
+								<!--<span class="chat-img pull-left">-->
+									<!--&lt;!&ndash;<img src="photo/g8201306142323_jpg!article.jpg" alt="User Avatar" class="img-circle" style="height: 80px;width: 80px"/>&ndash;&gt;-->
+								<!--</span>-->
+								<!--<div class="chat-body clearfix">-->
+									<!--<div class="header">-->
+										<!--<strong class="primary-font">询盘</strong> <small class="text-muted">第一次操作</small>-->
+									<!--</div>-->
+									<!--<a herf="#">第一次参考答案</a>-->
+								<!--</div>-->
+							<!--</li>-->
 							<!--在left控制图片位置-->
 							<!--<li class="left clearfix">-->
 								<!--<span class="chat-img pull-left">-->
@@ -309,7 +310,7 @@
 			</div><!--/.col-->
 		</div><!--/.row-->
 	</div>	<!--/.main-->
-	<div id="gradepage" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+	<div id="gradepage" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei';display: none">
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
@@ -334,12 +335,12 @@
 							</thead>
 							<tbody id="gradeinsertpoint">
 							<!--<tr>-->
-								<!--<td>操作1</td>-->
-								<!--<td>N/A</td>-->
+							<!--<td>操作1</td>-->
+							<!--<td>N/A</td>-->
 							<!--</tr>-->
 							<!--<tr>-->
-								<!--<td>Sachin</td>-->
-								<!--<td>Mumbai</td>-->
+							<!--<td>Sachin</td>-->
+							<!--<td>Mumbai</td>-->
 							<!--</tr>-->
 							</tbody>
 						</table>
@@ -374,8 +375,8 @@
 			</div>
 		</div>
 	</div><!--/.gradepage-->
-	<div id="bussinesspage" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei'"></div>
-	<div id="searchpage"class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+	<div id="bussinesspage1" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei';display: none"></div>
+	<div id="searchpage"class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei';display: none">
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
@@ -744,12 +745,125 @@
 			</div>
 		</div>
 	</div>
+	<div id="changepasswordpage" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei';display: none">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">修改密码</li>
+			</ol>
+		</div><!--/.row-->
+		<br><br>
+
+		<div  class="row">
+
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading"><label id="">修改密码</label></div>
+					<div class="panel-body">
+						<form role="form">
+
+							<!--<div class="form-group">-->
+								<!--<label>请输入您原密码：</label>-->
+								<!--<input id="originalpwd" class="form-control" placeholder="原密码">-->
+							<!--</div>-->
+							<div class="form-group">
+								<label>请输入新密码：</label>
+								<input id="newpwd1" class="form-control" placeholder="新密码">
+							</div>
+							<div class="form-group">
+								<label>请再次输入新密码：</label>
+								<input id="newpwd2" class="form-control" placeholder="再次输入新密码">
+							</div>
+
+							<button type="button" class="btn btn-primary" onclick="changepwd()">修改</button>
+							<button type="reset" class="btn btn-default">清除</button>
+							<br><br>
+
+							<div >
+								<b id="changepwdresult"></b>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div><!--/.gradepage-->
+	<div id="bussinesspage" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei';display: none">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">操作要求</li>
+			</ol>
+		</div><!--/.row-->
+		<br><br>
+
+		<div id="" class="row">
+
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading"><label id="bussinessheading">N/A</label></div>
+					<div class="panel-body">
+						<table class="table">
+							<caption>操作表单</caption>
+							<thead>
+							<tr>
+								<th>操作步骤</th>
+								<th>操作要求</th>
+							</tr>
+							</thead>
+							<tbody id="bussinessinsertpoint">
+							<!--<tr>-->
+							<!--<td>操作1</td>-->
+							<!--<td>N/A</td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+							<!--<td>Sachin</td>-->
+							<!--<td>Mumbai</td>-->
+							<!--</tr>-->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading"><label id="feadbackheading">N/A</label></div>
+					<div class="panel-body">
+						<table class="table">
+							<caption>业务反馈单</caption>
+							<thead>
+							<tr>
+								<th>反馈步骤</th>
+								<th>反馈信息</th>
+							</tr>
+							</thead>
+							<tbody id="fadebackinsertpoint">
+							<!--<tr>-->
+							<!--<td>操作1</td>-->
+							<!--<td>N/A</td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+							<!--<td>Sachin</td>-->
+							<!--<td>Mumbai</td>-->
+							<!--</tr>-->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div><!--/.gradepage-->
+
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
+	<!--<script src="js/chart-data.js"></script>-->
+	<!--<script src="js/easypiechart.js"></script>-->
+	<!--<script src="js/easypiechart-data.js"></script>-->
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script>
 		$('#calendar').datepicker({
