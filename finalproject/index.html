@@ -54,7 +54,7 @@
 			<li id="libussinesspage"><a onclick="bussinesspage()"><span class="glyphicon glyphicon-th"></span> 业务操作</a></li>
 			<li id="ligradepage"><a onclick="showgradepage()"><span class="glyphicon glyphicon-stats"></span> 成绩进度</a></li>
 			<li id="litablepage"><a href=""><span class="glyphicon glyphicon-list-alt"></span> 表类示范</a></li>
-			<li id="lihelppage"><a href=""><span class="glyphicon glyphicon-info-sign"></span> 帮助中心</a></li>
+			<li id="lihelppage"><a onclick="showhelppage()"><span class="glyphicon glyphicon-info-sign"></span> 帮助中心</a></li>
 			<li id="liotherpage"><a href=""><span class="glyphicon glyphicon-pencil"></span> 其他</a></li>
 			<li id="lisearchpage"><a onclick="showsearchpage()"><span class="glyphicon glyphicon-fire"></span> 查询中心</a></li>
 
@@ -857,6 +857,85 @@
 
 		</div>
 	</div><!--/.gradepage-->
+	<div id="helppage" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei';display: none">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">帮助中心</li>
+			</ol>
+		</div><!--/.row-->
+		<br><br>
+
+		<div id="" class="row">
+
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading"><label>操作提问</label></div>
+					<div class="panel-body">
+						<form role="form">
+							<div class="form-group">
+								<label>提问主题:</label>
+								<select class="form-control" id="questionselecttitle">
+									<option selected = "selected">请您选择---</option>
+									<option>操作要求</option>
+									<option>业务反馈</option>
+									<option>参考答案</option>
+									<option>提示/解答</option>
+									<option>操作点评</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>补充:</label>
+								<input id="questionselectothertitle" class="form-control" type="text" placeholder="请输入补充问题">
+							</div>
+							<div class="form-group">
+								<label>内容:</label>
+								<textarea id="questiontextarea" class="form-control "style="height: 240px"></textarea>
+							</div>
+							<button type="button" class="btn btn-primary" onclick="putquestion()">确定</button>
+							<button type="reset" class="btn btn-default">清除</button>
+							<b id="questionresult"></b>
+
+
+						</form>
+
+
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading"><label id="feadbackheading">N/A</label></div>
+					<div class="panel-body">
+						<table class="table">
+							<caption>业务反馈单</caption>
+							<thead>
+							<tr>
+								<th>反馈步骤</th>
+								<th>反馈信息</th>
+							</tr>
+							</thead>
+							<tbody id="fadebackinsertpoint">
+							<!--<tr>-->
+							<!--<td>操作1</td>-->
+							<!--<td>N/A</td>-->
+							<!--</tr>-->
+							<!--<tr>-->
+							<!--<td>Sachin</td>-->
+							<!--<td>Mumbai</td>-->
+							<!--</tr>-->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div><!--/.gradepage-->
+
+
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>

@@ -2,7 +2,7 @@
  * Created by home on 2016-4-13.
  */
 
-var ip = "http://localhost:8080/";
+var ip = "http://123.206.83.190:8080/";
 var pageusername;
 var nowstage;
 
@@ -161,13 +161,13 @@ function showmainpage(){
     $('#bussinesspage').hide(2000);
     $('#searchpage').hide(2000);
     $('#changepasswordpage').hide(2000);
-    $('#test').hide(2000);
+    $('#helppage').hide(2000);
     $('#test').hide(2000);
 
     $('#ligradepage').attr("class", "");
     $('#libussinesspage').attr("class", "");
     $('#lisearchpage').attr("class", "");
-    $('#test').attr("class", "");
+    $('#lihelppage').attr("class", "");
     $('#test').attr("class", "");
     $('#test').attr("class", "");
     $('#mainpage').show(2000);
@@ -182,13 +182,13 @@ function bussinesspage(){
     $('#mainpage').hide(2000);
     $('#searchpage').hide(2000);
     $('#changepasswordpage').hide(2000);
-    $('#test').hide(2000);
+    $('#helppage').hide(2000);
     $('#test').hide(2000);
 
     $('#ligradepage').attr("class", "");
     $('#limainpage').attr("class", "");
     $('#lisearchpage').attr("class", "");
-    $('#test').attr("class", "");
+    $('#lihelppage').attr("class", "");
     $('#test').attr("class", "");
     $('#test').attr("class", "");
     $('#bussinesspage').show(2000);
@@ -204,13 +204,13 @@ function showgradepage(){
     $('#bussinesspage').hide(2000);
     $('#searchpage').hide(2000);
     $('#changepasswordpage').hide(2000);
-    $('#test').hide(2000);
+    $('#helppage').hide(2000);
     $('#test').hide(2000);
 
     $('#limainpage').attr("class", "");
     $('#libussinesspage').attr("class", "");
     $('#lisearchpage').attr("class", "");
-    $('#test').attr("class", "");
+    $('#lihelppage').attr("class", "");
     $('#test').attr("class", "");
     $('#test').attr("class", "");
 
@@ -224,13 +224,13 @@ function showsearchpage() {
     $('#bussinesspage').hide(2000);
     $('#gradepage').hide(2000);
     $('#changepasswordpage').hide(2000);
-    $('#test').hide(2000);
+    $('#helppage').hide(2000);
     $('#test').hide(2000);
 
     $('#ligradepage').attr("class", "");
     $('#libussinesspage').attr("class", "");
     $('#limainpage').attr("class", "");
-    $('#litest').attr("class", "");
+    $('#lihelppage').attr("class", "");
     $('#litest').attr("class", "");
     $('#litest').attr("class", "");
 
@@ -244,20 +244,36 @@ function showchangepasswordpage(){
     $('#bussinesspage').hide(2000);
     $('#searchpage').hide(2000);
     $('#mainpage').hide(2000);
-    $('#test').hide(2000);
+    $('#helppage').hide(2000);
     $('#test').hide(2000);
 
     $('#ligradepage').attr("class", "");
     $('#libussinesspage').attr("class", "");
     $('#lisearchpage').attr("class", "");
-    $('#test').attr("class", "");
+    $('#lihelppage').attr("class", "");
     $('#test').attr("class", "");
     $('#test').attr("class", "");
     $('#changepasswordpage').show(2000);
     $('#limainpage').attr("class", "active");
 }
 
+function showhelppage(){
+    $('#gradepage').hide(2000);
+    $('#bussinesspage').hide(2000);
+    $('#searchpage').hide(2000);
+    $('#mainpage').hide(2000);
+    $('#test').hide(2000);
+    $('#test').hide(2000);
 
+    $('#ligradepage').attr("class", "");
+    $('#libussinesspage').attr("class", "");
+    $('#lisearchpage').attr("class", "");
+    $('#limainpage').attr("class", "");
+    $('#test').attr("class", "");
+    $('#test').attr("class", "");
+    $('#helppage').show(2000);
+    $('#lihelppage').attr("class", "active");
+}
 
 
 /*
@@ -473,6 +489,38 @@ function bussinessstepload(){
             alert("AJAX请求失败");
         }
     })
+}
+
+/*
+*
+* function:操作提问
+*
+* */
+
+function putquestion(){
+    var realurl =ip+"TradingSystem/commuwithta_res.action?";
+
+    $.ajax({
+        type: "POST",
+        async:false,
+        url:realurl,
+        data:{
+            title:$("#questionselecttitle").val(),
+            title_other:$("#questionselectothertitle").val(),
+            content:$("#questiontextarea").val()
+        },
+        dataType:"jsonp",
+        jsonp:"callback",
+        jsonpCallback : "handler1",
+        success:function (data) {
+             //alert("data"+data.result);
+            $("#questionresult").html(data.result);
+            //$("#latestfbk").html(data.latestfbk);
+        },
+        error:function () {
+            alert("AJAX请求失败");
+        }
+    });
 
 
 }
