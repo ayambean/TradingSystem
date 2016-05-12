@@ -129,9 +129,6 @@ function pageonload(){
                 alert("AJAX请求失败");
             }
         })
-
-
-
     },500);
 
 }
@@ -258,6 +255,7 @@ function showchangepasswordpage(){
 }
 
 function showhelppage(){
+    advisepageonload();
     $('#gradepage').hide(2000);
     $('#bussinesspage').hide(2000);
     $('#searchpage').hide(2000);
@@ -522,6 +520,57 @@ function putquestion(){
         }
     });
 
+
+}
+/*
+*
+* function:操作提示
+* position:帮助中心中右侧表单
+*
+*
+*
+* */
+function advisepageonload(){
+
+    var realurl =ip+"TradingSystem/advise_list.action?";
+    var step=1;//初始化步骤加载
+    var arrayObj = new Array();　//创建一个数组存分数
+    //alert("到这");
+
+    $("#adviseheading").html("当前"+pageusername+"用户的操作提示");
+
+    $.ajax({
+        type: "POST",
+        async:true,
+        url:realurl,
+        data:{
+            stuname:pageusername
+        },
+        dataType:"jsonp",
+        jsonp:"callback",
+        jsonpCallback : "handler1",
+        success:function (data) {
+            //alert("data"+data.result);
+            // alert("stage"+data.grade1);
+            arrayObj[1]=data.advise;
+            arrayObj[2]=data.stage2;
+
+            //
+            // for(var i=1;i<=nowstage;i++){
+            //     // alert(arrayObj[i]);
+            //     $("#adviseinsertpoint").append("<tr> <td>操作"+i+"</td> <td>"+arrayObj[i]+"</td> </tr>");
+            // }
+            $("#adviseinsertpoint").append("<tr> <td>"+arrayObj[2]+"</td> <td>"+arrayObj[1]+"</td> </tr>");
+
+
+            // $("#laststagenumber").html("操作"+data.stage);
+            // $("#laststrequest").html(data.latestrequest);
+            //$("#latestfbk").html(data.latestfbk);
+        },
+        error:function () {
+            alert("AJAX请求失败");
+        }
+    })
 
 }
 
