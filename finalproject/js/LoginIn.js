@@ -2,7 +2,8 @@
  * Created by home on 2016-4-12.
  */
 
-var ip = "http://123.206.83.190:8080/";
+// var ip = "http://123.206.83.190:8080/";
+var ip = "http://localhost:8080/";
 
 $("#confirm").click(function (){
     alert("正在尝试连接!");

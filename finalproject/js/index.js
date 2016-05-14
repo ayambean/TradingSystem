@@ -6,6 +6,7 @@
 var ip = "http://localhost:8080/";
 var pageusername;
 var nowstage;
+var controlload =[0,0,0,0,0,0,0,0];//用0和1控制 0代表未加载 1代表已加载
 
 
 function pageonload(){
@@ -200,16 +201,18 @@ function showmainpage(){
     $('#libussinesspage').attr("class", "");
     $('#lisearchpage').attr("class", "");
     $('#lihelppage').attr("class", "");
-    $('#test').attr("class", "");
-    $('#test').attr("class", "");
+    // $('#test').attr("class", "");
+    // $('#test').attr("class", "");
     $('#mainpage').show(2000);
     $('#limainpage').attr("class", "active");
 
 
 }
 function bussinesspage(){
+    if(controlload[1]==0){
+        bussinessstepload();
+    }
 
-    bussinessstepload();
     $('#gradepage').hide(2000);
     $('#mainpage').hide(2000);
     $('#searchpage').hide(2000);
@@ -221,15 +224,16 @@ function bussinesspage(){
     $('#limainpage').attr("class", "");
     $('#lisearchpage').attr("class", "");
     $('#lihelppage').attr("class", "");
-    $('#test').attr("class", "");
-    $('#test').attr("class", "");
+    // $('#test').attr("class", "");
+    // $('#test').attr("class", "");
     $('#bussinesspage').show(2000);
     $('#libussinesspage').attr("class", "active");
-
+    controlload[1]=1;
 }
 function showgradepage(){
-
-    gradepageonload();
+    if(controlload[2]==0){
+        gradepageonload();
+    }
 
     $('#mainpage').hide(2000);
     $('#bussinesspage').hide(2000);
@@ -247,6 +251,7 @@ function showgradepage(){
 
     $('#gradepage').show(2000);
     $('#ligradepage').attr("class", "active");
+    controlload[2]=1;
 
 }
 function showsearchpage() {
@@ -286,7 +291,11 @@ function showchangepasswordpage(){
     $('#limainpage').attr("class", "active");
 }
 function showhelppage(){
-    advisepageonload();
+
+    if(controlload[5]==0){
+        advisepageonload();
+    }
+
     $('#gradepage').hide(2000);
     $('#bussinesspage').hide(2000);
     $('#searchpage').hide(2000);
@@ -302,6 +311,7 @@ function showhelppage(){
     $('#test').attr("class", "");
     $('#helppage').show(2000);
     $('#lihelppage').attr("class", "active");
+    controlload[5]=1;
 }
 
 
