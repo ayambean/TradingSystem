@@ -2,9 +2,11 @@
  * Created by home on 2016-4-13.
  */
 
-var ip = "http://123.206.83.190:8080/";
+// var ip = "http://123.206.83.190:8080/";
+var ip = "http://localhost:8080/";
 var pageusername;
 var nowstage;
+
 
 function pageonload(){
 
@@ -75,6 +77,24 @@ function pageonload(){
 
     var realurl3 =ip+"TradingSystem/refer_list.action?";
     var arrayObj2 = new Array();　//创建一个数组存分数
+
+    var ToDolist = new Array(16);　//创建一个数组存分数
+    ToDolist[0]="建交";
+    ToDolist[1]="报价";
+    ToDolist[2]="发盘";
+    ToDolist[3]="还价";
+    ToDolist[4]="还盘";
+    ToDolist[5]="成交";
+    ToDolist[6]="签约";
+    ToDolist[7]="审证";
+    ToDolist[8]="改订";
+    ToDolist[9]="订舱";
+    ToDolist[10]="报关";
+    ToDolist[11]="装船";
+    ToDolist[12]="制单";
+    ToDolist[13]="审单";
+    ToDolist[14]="善后";
+    ToDolist[15]="总结";
     setTimeout(function(){
         $.ajax({
             type: "POST",
@@ -129,6 +149,21 @@ function pageonload(){
                 alert("AJAX请求失败");
             }
         })
+
+
+
+        for(var j=0;j<=15-nowstage;j++){
+
+            $("#Todolistinsertpoint").append(
+                "<li class='todo-list-item'>"+
+                "<label>"+(Number(j)+Number(1))+". "+ToDolist[Number(j)+Number(nowstage)]+"</label>"+
+            "<div class='pull-right action-buttons'>"+
+                "<a onclick='bussinesspage()'><span class='glyphicon glyphicon-pencil'></span></a>"+
+                "<a href='' class='flag'><span class='glyphicon glyphicon-flag'></span></a>"+
+                "</div>"+
+                "</li>"
+            )
+        }
     },500);
 
 }
@@ -192,7 +227,6 @@ function bussinesspage(){
     $('#libussinesspage').attr("class", "active");
 
 }
-
 function showgradepage(){
 
     gradepageonload();
@@ -215,7 +249,6 @@ function showgradepage(){
     $('#ligradepage').attr("class", "active");
 
 }
-
 function showsearchpage() {
     $('#mainpage').hide(2000);
     $('#bussinesspage').hide(2000);
@@ -234,7 +267,6 @@ function showsearchpage() {
     $('#searchpage').show(2000);
     $('#lisearchpage').attr("class", "active");
 }
-
 function showchangepasswordpage(){
 
     $('#gradepage').hide(2000);
@@ -253,7 +285,6 @@ function showchangepasswordpage(){
     $('#changepasswordpage').show(2000);
     $('#limainpage').attr("class", "active");
 }
-
 function showhelppage(){
     advisepageonload();
     $('#gradepage').hide(2000);
@@ -388,7 +419,6 @@ function changepwd(){
 /*
 *
 * function:操作要求
-*
 * */
 
 function bussinessstepload(){
@@ -492,7 +522,6 @@ function bussinessstepload(){
 /*
 *
 * function:操作提问
-*
 * */
 
 function putquestion(){
@@ -523,16 +552,14 @@ function putquestion(){
 
 }
 /*
-*
 * function:操作提示
 * position:帮助中心中右侧表单
-*
-*
 *
 * */
 function advisepageonload(){
 
     var realurl =ip+"TradingSystem/advise_list.action?";
+    var realurl1 =ip+"TradingSystem/questionanswer.action?";
     var step=1;//初始化步骤加载
     var arrayObj = new Array();　//创建一个数组存分数
     //alert("到这");
@@ -571,6 +598,56 @@ function advisepageonload(){
             alert("AJAX请求失败");
         }
     })
+    //两次ajax请求中间隔时间,防止发生冲突
+    setTimeout(function(){
+        var itemno;
+        $.ajax({
+            type: "POST",
+            async:true,
+            url:realurl1,
+            data:{
+                stuname:pageusername
+            },
+            dataType:"jsonp",
+            jsonp:"callback",
+            jsonpCallback : "callback",
+            success:function (data) {
+                $.each(data.QuestionAndAnswerList, function(i, item) {
+                    itemno = i+1;
+                    $("#questioninsertpoint").append(
+                        // "<div>" + item.dostage + "</div>" +
+                        // "<div>" + item.dianping    + "</div>" +
+                        // "<div>" + item.time + "</div><hr/>");
+                        "<li class='left clearfix'>"+
+                        "<span class='chat-img pull-left'>"+
+                        "<img src='photo/g8201306142323_jpg!article.jpg' alt='User Avatar' class='img-circle' style='height: 80px;width: 80px'/>"+
+                        "</span>"+
+                        "<div class='chat-body clearfix'>"+
+                        "<div class='header'>"+
+                        "<strong class='primary-font'>"+"第"+itemno+"个问题"+"</strong> <small class='text-muted'>"+item.time+"</small>"+
+                        "</div>"+
+                        "<p>提问主题:"+item.title +"</p>"+
+                        "<p>提问主题说明:"+item.title_other +"</p>"+
+                        "<p>提问问题:"+item.content +"</p>"+
+                        "<p>教师回复答案:"+item.answer +"</p>"+
+                        "</div>"+
+                        "</li>")
+                });
+                // for(var i=1;i<=16;i++){
+                //     // alert(arrayObj[i]);
+                //     $("#fadebackinsertpoint").append("<tr> <td>操作"+i+"</td> <td>"+arrayObj[i]+"</td> </tr>");
+                // }
+
+                // $("#laststagenumber").html("操作"+data.stage);
+                // $("#laststrequest").html(data.latestrequest);
+                //$("#latestfbk").html(data.latestfbk);
+            },
+            error:function () {
+                alert("AJAX请求失败");
+            }
+        })
+
+    },500)
 
 }
 
