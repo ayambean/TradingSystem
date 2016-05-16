@@ -53,9 +53,9 @@
 			<li id="limainpage" class="active"><a onclick="showmainpage()"> <span class="glyphicon glyphicon-dashboard"></span>个人中心</a></li>
 			<li id="libussinesspage"><a onclick="bussinesspage()"><span class="glyphicon glyphicon-th"></span> 业务操作</a></li>
 			<li id="ligradepage"><a onclick="showgradepage()"><span class="glyphicon glyphicon-stats"></span> 成绩进度</a></li>
-			<li id="litablepage"><a href=""><span class="glyphicon glyphicon-list-alt"></span> 表类示范</a></li>
+			<li id="litablepage"><a onclick="showtablepage()"><span class="glyphicon glyphicon-list-alt"></span> 表类示范</a></li>
 			<li id="lihelppage"><a onclick="showhelppage()"><span class="glyphicon glyphicon-info-sign"></span> 帮助中心</a></li>
-			<li id="liotherpage"><a href=""><span class="glyphicon glyphicon-pencil"></span> 其他</a></li>
+			<li id="liotherpage"><a onclick="showotherpage()"><span class="glyphicon glyphicon-pencil"></span> 其他</a></li>
 			<li id="lisearchpage"><a onclick="showsearchpage()"><span class="glyphicon glyphicon-fire"></span> 查询中心</a></li>
 
 			<li role="presentation" class="divider"></li>
@@ -64,7 +64,7 @@
 		<div class="attribution">国际贸易模拟平台</div>
 	</div><!--/.sidebar-->
 		
-	<div id="mainpage" class="col-sm-9 col-md-10 col-sm-offset-3 col-lg-10 col-lg-offset-2  col-md-offset-2 main" style="font-family: 'Microsoft YaHei';">
+	<div id="mainpage" class="col-sm-9 col-md-10 col-sm-offset-3 col-lg-10 col-lg-offset-2  col-md-offset-2 main" style="font-family: 'Microsoft YaHei'">
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
@@ -354,31 +354,31 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-				<li class="active">查询中心</li>
+				<li class="active" id="searchname">查询中心</li>
 			</ol>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="panel panel-default">
 				<ul class="nav nav-tabs">
-					<li class="active"><a href="">商品</a></li>
-					<li class="dropdown ">
+					<li class="active" id="com"><a onclick=";$('#com').attr('class','active');$('#goods').attr('class','')">商品</a></li>
+					<li class="dropdown " id="goods">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">费率</a>
 						<ul class="dropdown-menu">
-							<li>
-								<a href="#" onclick="$('#searchcom').hide();$('#searchclass').show()">货物等级表</a>
+							<li >
+								<a href="#" onclick="$('#searchcom').hide();$('#searchclass').show();$('#searchname').val('货物等级表');$('#com').attr('class','');$('#goods').attr('class','active')">货物等级表</a>
+							</li>
+							<li class="divider"></li>
+							<li >
+								<a href="#" onclick="$('#searchname').val('海洋运价表');$('#com').attr('class','');$('#goods').attr('class','active')">海洋运价表</a>
+							</li>
+							<li class="divider"></li>
+							<li >
+								<a href="#" onclick="$('#searchcom').hide();$('#ratepage').show();$('#searchname').val('海关税则表');$('#com').attr('class','');$('#goods').attr('class','active')">海关税则表</a>
 							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="#">海洋运价表</a>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<a href="#">海关税则表</a>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<a href="#">汇率表</a>
+								<a href="#" onclick="$('#searchcom').hide();$('#ratepage').show();$('#searchname').val('汇率表');$('#com').attr('class','');$('#goods').attr('class','active')">汇率表</a>
 							</li>
 						</ul>
 					</li>
@@ -398,122 +398,33 @@
 
 								<div class="form-group">
 									<label>如果您希望根据商品大类查询，请选择：</label>
-									<select class="form-control">
-										<option>Option 1</option>
-										<option>Option 2</option>
-										<option>Option 3</option>
-										<option>Option 4</option>
+									<select id="com_class" class="form-control">
+										<option>please</option>
+										<option>茶餐具</option>
+										<option>灯具</option>
+										<option>儿童用品</option>
+										<option>工具</option>
+										<option>机电产品</option>
+										<option>家居产品</option>
+										<option>家具</option>
+										<option>乐器</option>
+										<option>钟表</option>
+										<option>体育用品</option>
+										<option>玩具</option>
+										<option>文教用品</option>
+										<option>箱包</option>
+										<option>鞋帽</option>
+										<option>自行车</option>
+										<option>食品</option>
+										<option>野营用品</option>
 									</select>
 								</div>
 								<div class="form-group">
 									<label>根据商品货号查询：</label>
-									<input class="form-control" placeholder="商品货号">
+									<input id="com_id" class="form-control" placeholder="商品货号">
 								</div>
 
-								<!--<div class="form-group">-->
-								<!--<label>Password</label>-->
-								<!--<input type="password" class="form-control">-->
-								<!--</div>-->
-								<!---->
-								<!--<div class="form-group checkbox">-->
-								<!--<label>-->
-								<!--<input type="checkbox">Remember me</label>-->
-								<!--</div>-->
-
-								<!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
-								<!--&lt;!&ndash;<label>File input</label>&ndash;&gt;-->
-								<!--&lt;!&ndash;<input type="file">&ndash;&gt;-->
-								<!--&lt;!&ndash;<p class="help-block">Example block-level help text here.</p>&ndash;&gt;-->
-								<!--&lt;!&ndash;</div>&ndash;&gt;-->
-								<!---->
-								<!--<div class="form-group">-->
-								<!--<label>Text area</label>-->
-								<!--<textarea class="form-control" rows="3"></textarea>-->
-								<!--</div>-->
-								<!---->
-								<!--<label>Validation</label>-->
-								<!--<div class="form-group has-success">-->
-								<!--<input class="form-control" placeholder="Success">-->
-								<!--</div>-->
-								<!--<div class="form-group has-warning">-->
-								<!--<input class="form-control" placeholder="Warning">-->
-								<!--</div>-->
-								<!--<div class="form-group has-error">-->
-								<!--<input class="form-control" placeholder="Error">-->
-								<!--</div>-->
-								<!--</form>-->
-								<!--</div>-->
-								<!--<div class="col-md-6">-->
-								<!---->
-								<!--<div class="form-group">-->
-								<!--<label>Checkboxes</label>-->
-								<!--<div class="checkbox">-->
-								<!--<label>-->
-								<!--<input type="checkbox" value="">Checkbox 1-->
-								<!--</label>-->
-								<!--</div>-->
-								<!--<div class="checkbox">-->
-								<!--<label>-->
-								<!--<input type="checkbox" value="">Checkbox 2-->
-								<!--</label>-->
-								<!--</div>-->
-								<!--<div class="checkbox">-->
-								<!--<label>-->
-								<!--<input type="checkbox" value="">Checkbox 3-->
-								<!--</label>-->
-								<!--</div>-->
-								<!--<div class="checkbox">-->
-								<!--<label>-->
-								<!--<input type="checkbox" value="">Checkbox 4-->
-								<!--</label>-->
-								<!--</div>-->
-								<!--</div>-->
-								<!---->
-								<!--<div class="form-group">-->
-								<!--<label>Radio Buttons</label>-->
-								<!--<div class="radio">-->
-								<!--<label>-->
-								<!--<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio Button 1-->
-								<!--</label>-->
-								<!--</div>-->
-								<!--<div class="radio">-->
-								<!--<label>-->
-								<!--<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio Button 2-->
-								<!--</label>-->
-								<!--</div>-->
-								<!--<div class="radio">-->
-								<!--<label>-->
-								<!--<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio Button 3-->
-								<!--</label>-->
-								<!--</div>-->
-								<!--<div class="radio">-->
-								<!--<label>-->
-								<!--<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio Button 4-->
-								<!--</label>-->
-								<!--</div>-->
-								<!--</div>-->
-								<!---->
-								<!--<div class="form-group">-->
-								<!--<label>Selects</label>-->
-								<!--<select class="form-control">-->
-								<!--<option>Option 1</option>-->
-								<!--<option>Option 2</option>-->
-								<!--<option>Option 3</option>-->
-								<!--<option>Option 4</option>-->
-								<!--</select>-->
-								<!--</div>-->
-								<!---->
-								<!--<div class="form-group">-->
-								<!--<label>Multiple Selects</label>-->
-								<!--<select multiple class="form-control">-->
-								<!--<option>Option 1</option>-->
-								<!--<option>Option 2</option>-->
-								<!--<option>Option 3</option>-->
-								<!--<option>Option 4</option>-->
-								<!--</select>-->
-								<!--</div>-->
-								<!--</div>-->
-								<button type="submit" class="btn btn-primary">开始查询</button>
+								<button TYPE="button" onclick="searchcommdity()" CLASS="btn btn-warning">开始查询</button>
 								<button type="reset" class="btn btn-default">清除</button>
 
 							</form>
@@ -534,19 +445,31 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">查询结果</div>
 					<div class="panel-body">
-						<table data-toggle="table" data-url="tables/data2.json" >
+						<table class="table">
+							<caption>商品查询结果</caption>
 							<thead>
 							<tr>
-								<th data-field="id" data-align="right">商品大类</th>
-								<th data-field="name">商品总重量</th>
-								<th data-field="price">商品id</th>
-								<th data-field="price">商品名称</th>
-								<th data-field="price">商品包装</th>
-								<th data-field="price">商品包装尺寸</th>
-								<th data-field="price">商品价格</th>
-
+								<th>商品图</th>
+								<th>商品大类</th>
+								<th>商品货号</th>
+								<th>商品名称</th>
+								<th>商品包装情况</th>
+								<th>商品包装尺寸</th>
+								<th>商品价格</th>
 							</tr>
 							</thead>
+							<tbody id="cominsertpoint" >
+							<tr>
+								<td><img src='photo/g8201306142323_jpg!article.jpg' alt='User Avatar' class='img-circle' style='height: 80px;width: 80px'/></td>
+								<td>人民币兑换港元</td>
+								<td>1 人民币 = 1.1885 港元(HKD)</td>
+								<td>3123</td>
+								<td>3123</td>
+								<td>3123</td>
+								<td>3123</td>
+							</tr>
+
+							</tbody>
 						</table>
 					</div>
 				</div>
@@ -702,21 +625,69 @@
 					<div class="panel-body">
 						<table data-toggle="table" data-url="tables/data2.json" >
 							<thead>
-							<tr>
-								<th data-field="id" data-align="right">商品大类</th>
-								<th data-field="name">商品总重量</th>
-								<th data-field="price">商品id</th>
-								<th data-field="price">商品名称</th>
-								<th data-field="price">商品包装</th>
-								<th data-field="price">商品包装尺寸</th>
-								<th data-field="price">商品价格</th>
-
-							</tr>
+							<!---->
 							</thead>
 						</table>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div id="ratepage" class="row" style="display: none">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">汇率查询列表</label></div>
+					<div class="panel-body">
+						<table class="table">
+							<caption>汇率表</caption>
+							<thead>
+							<tr>
+								<th>换算种类</th>
+								<th>换算价格</th>
+							</tr>
+							</thead>
+							<tbody >
+							<tr>
+								<td>人民币兑换港元</td>
+								<td>1 人民币 = 1.1885 港元(HKD)</td>
+							</tr>
+							<tr>
+								<td>人民币兑换澳门元</td>
+								<td>1 人民币 = 1.2241 澳门元(MOP)</td>
+							</tr>
+							<tr>
+								<td>人民币兑换台币</td>
+								<td>1 人民币 = 4.9936 台币(TWD)</td>
+							</tr>
+							<tr>
+								<td>人民币兑换欧元</td>
+								<td>1 人民币 = 0.1354 欧元(EUR)</td>
+							</tr>
+							<tr>
+								<td>人民币兑换美元</td>
+								<td>1 人民币 = 0.1531 美元(USD)</td>
+							</tr>
+							<tr>
+								<td>人民币兑换英镑</td>
+								<td>1 人民币 = 0.1066 英镑(GBP)</td>
+							</tr>
+							<tr>
+								<td>人民币兑换澳元</td>
+								<td>1 人民币 = 0.2106 澳元(AUD)</td>
+							</tr>
+							<tr>
+								<td>人民币兑换韩元</td>
+								<td>1 人民币 = 180.1406 韩元(KRW)</td>
+							</tr>
+							<tr>
+								<td>人民币兑换日元</td>
+								<td>1 人民币 = 16.6303 日元(JPY)</td>
+							</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div><!-- /.row -->
 		</div>
 	</div>
 	<div id="changepasswordpage" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei';display: none">
@@ -909,6 +880,98 @@
 			</div>
 		</div><!--/.gradepage-->
 	</div>
+	<div id="tablepage" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei';display: none">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">参考表单</li>
+			</ol>
+		</div><!--/.row-->
+		<br><br>
+
+		<div id="31" class="row">
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading"><label >参考表单</label></div>
+					<div class="panel-body">
+						<table class="table">
+							<caption>表单列表</caption>
+							<thead>
+							<tr>
+								<th width="70%">序号</th>
+								<th width="30%">案例表单名称</th>
+							</tr>
+							</thead>
+							<tbody id="">
+							<tr>
+							<td>1</td>
+							<td><a href="tables/出口合同.html" target="_Blank">出口合同</a></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td><a href="tables/信用证.html" target="_Blank">信用证</a></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td><a href="tables/保险单.html" target="_Blank">保险单</a></td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td><a href="tables/售货确认书.html" target="_Blank">售货确认书</a></td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td><a href="tables/商业发票.html" target="_Blank">商业发票</a></td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td><a href="tables/报价单.html" target="_Blank">报价单</a></td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td><a href="tables/海运出口托运单.html" target="_Blank">海运出口托运单</a></td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td><a href="tables/海运提单.html" target="_Blank">海运提单</a></td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td><a href="tables/装货单.html" target="_Blank">装货单</a></td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--/.gradepage-->
+	<div id="otherpage" class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="font-family: 'Microsoft YaHei';display: none">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">其他</li>
+			</ol>
+		</div><!--/.row-->
+		<br><br>
+
+		<div id="3" class="row">
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading"><label >上传文件</label></div>
+					<div class="panel-body">
+						<input id="lefile" type="file" style="display:none" >
+						<div class="input-append">
+							<input id="photoCover" class="input-large" type="text" style="height:30px;width:300px">
+							<a class="btn" onclick="$('input[id=lefile]').click();">浏览文件</a><br><br>
+							<button class="btn btn-success" type="button">上传文件</button>
+							<button class="btn btn-danger" type="button">取消上传</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--/.gradepage-->
 
 
 

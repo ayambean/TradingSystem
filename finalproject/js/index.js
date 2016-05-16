@@ -195,14 +195,15 @@ function showmainpage(){
     $('#searchpage').hide(2000);
     $('#changepasswordpage').hide(2000);
     $('#helppage').hide(2000);
-    $('#test').hide(2000);
+    $('#tablepage').hide(2000);
+    $('#otherpage').hide(2000);
 
     $('#ligradepage').attr("class", "");
     $('#libussinesspage').attr("class", "");
     $('#lisearchpage').attr("class", "");
     $('#lihelppage').attr("class", "");
-    // $('#test').attr("class", "");
-    // $('#test').attr("class", "");
+     $('#litablepage').attr("class", "");
+     $('#liotherpage').attr("class", "");
     $('#mainpage').show(2000);
     $('#limainpage').attr("class", "active");
 
@@ -218,14 +219,16 @@ function bussinesspage(){
     $('#searchpage').hide(2000);
     $('#changepasswordpage').hide(2000);
     $('#helppage').hide(2000);
-    $('#test').hide(2000);
+    $('#tablepage').hide(2000);
+    $('#otherpage').hide(2000);
+
 
     $('#ligradepage').attr("class", "");
     $('#limainpage').attr("class", "");
     $('#lisearchpage').attr("class", "");
     $('#lihelppage').attr("class", "");
-    // $('#test').attr("class", "");
-    // $('#test').attr("class", "");
+    $('#litablepage').attr("class", "");
+    $('#liotherpage').attr("class", "");
     $('#bussinesspage').show(2000);
     $('#libussinesspage').attr("class", "active");
     controlload[1]=1;
@@ -240,14 +243,16 @@ function showgradepage(){
     $('#searchpage').hide(2000);
     $('#changepasswordpage').hide(2000);
     $('#helppage').hide(2000);
-    $('#test').hide(2000);
+    $('#tablepage').hide(2000);
+    $('#otherpage').hide(2000);
+
 
     $('#limainpage').attr("class", "");
     $('#libussinesspage').attr("class", "");
     $('#lisearchpage').attr("class", "");
     $('#lihelppage').attr("class", "");
-    $('#test').attr("class", "");
-    $('#test').attr("class", "");
+    $('#litablepage').attr("class", "");
+    $('#liotherpage').attr("class", "");
 
     $('#gradepage').show(2000);
     $('#ligradepage').attr("class", "active");
@@ -260,14 +265,16 @@ function showsearchpage() {
     $('#gradepage').hide(2000);
     $('#changepasswordpage').hide(2000);
     $('#helppage').hide(2000);
-    $('#test').hide(2000);
+    $('#tablepage').hide(2000);
+    $('#otherpage').hide(2000);
+
 
     $('#ligradepage').attr("class", "");
     $('#libussinesspage').attr("class", "");
     $('#limainpage').attr("class", "");
     $('#lihelppage').attr("class", "");
-    $('#litest').attr("class", "");
-    $('#litest').attr("class", "");
+    $('#litablepage').attr("class", "");
+    $('#liotherpage').attr("class", "");
 
     $('#searchpage').show(2000);
     $('#lisearchpage').attr("class", "active");
@@ -279,14 +286,15 @@ function showchangepasswordpage(){
     $('#searchpage').hide(2000);
     $('#mainpage').hide(2000);
     $('#helppage').hide(2000);
-    $('#test').hide(2000);
+    $('#tablepage').hide(2000);
+    $('#otherpage').hide(2000);
 
     $('#ligradepage').attr("class", "");
     $('#libussinesspage').attr("class", "");
     $('#lisearchpage').attr("class", "");
     $('#lihelppage').attr("class", "");
-    $('#test').attr("class", "");
-    $('#test').attr("class", "");
+    $('#litablepage').attr("class", "");
+    $('#liotherpage').attr("class", "");
     $('#changepasswordpage').show(2000);
     $('#limainpage').attr("class", "active");
 }
@@ -300,21 +308,61 @@ function showhelppage(){
     $('#bussinesspage').hide(2000);
     $('#searchpage').hide(2000);
     $('#mainpage').hide(2000);
-    $('#test').hide(2000);
-    $('#test').hide(2000);
+    $('#tablepage').hide(2000);
+    $('#otherpage').hide(2000);
 
     $('#ligradepage').attr("class", "");
     $('#libussinesspage').attr("class", "");
     $('#lisearchpage').attr("class", "");
     $('#limainpage').attr("class", "");
-    $('#test').attr("class", "");
-    $('#test').attr("class", "");
+    $('#litablepage').attr("class", "");
+    $('#liotherpage').attr("class", "");
     $('#helppage').show(2000);
     $('#lihelppage').attr("class", "active");
     controlload[5]=1;
 }
 
+function showtablepage(){
 
+    $('#gradepage').hide(2000);
+    $('#bussinesspage').hide(2000);
+    $('#searchpage').hide(2000);
+    $('#mainpage').hide(2000);
+    $('#helppage').hide(2000);
+    $('#changepasswordpage').hide(2000);
+    $('#otherpage').hide(2000);
+
+
+    $('#ligradepage').attr("class", "");
+    $('#libussinesspage').attr("class", "");
+    $('#lisearchpage').attr("class", "");
+    $('#lihelppage').attr("class", "");
+    $('#limainpage').attr("class", "");
+    $('#liotherpage').attr("class", "");
+    $('#tablepage').show(2000);
+    $('#litablepage').attr("class", "active");
+}
+
+function showotherpage(){
+
+    $('#gradepage').hide(2000);
+    $('#bussinesspage').hide(2000);
+    $('#searchpage').hide(2000);
+    $('#mainpage').hide(2000);
+    $('#helppage').hide(2000);
+    $('#changepasswordpage').hide(2000);
+    $('#tablepage').hide(2000);
+
+
+    $('#ligradepage').attr("class", "");
+    $('#libussinesspage').attr("class", "");
+    $('#lisearchpage').attr("class", "");
+    $('#lihelppage').attr("class", "");
+    $('#limainpage').attr("class", "");
+    $('#litablepage').attr("class", "");
+    $('#otherpage').show(2000);
+    $('#liotherpage').attr("class", "active");
+}
 /*
 *
 * function:当前成绩显示
@@ -660,6 +708,70 @@ function advisepageonload(){
     },500)
 
 }
+
+/*
+* function:显示查询商品结果
+* position:查询界面第一栏
+*
+* */
+function searchcommdity(){
+
+    alert("haha"+$("#com_class").val()+"122"+$("#com_id").val());
+    var realurl =ip+"TradingSystem/commodity_inquiry.action?";
+    var orgclassname = $("#com_class").val();
+    var encondename = encodeURIComponent(orgclassname);//通过url加密方式防止中文乱码
+    alert("encondename"+encondename);
+    $("#cominsertpoint").empty();
+    $.ajax({
+        type: "POST",
+        async:true,
+        url:realurl,
+        data:{
+            com_class:encondename,
+            com_id:$("#com_id").val()
+        },
+        dataType:"jsonp",
+        jsonp:"callback",
+        jsonpCallback : "callback",
+        success:function (data) {
+            if(data.result=="不可以同时选择按照商品大类和商品的货号查询！"){
+                alert("不可以同时选择按照商品大类和商品的货号查询");
+            }else if(data.result=="数据库中没有该数据！"){
+                alert("数据库中没有该数据！");
+            }else{
+                $.each(data.commoditylist, function(i, item) {
+                    $("#cominsertpoint").append(
+                        // "<div>" + item.dostage + "</div>" +
+                        // "<div>" + item.dianping    + "</div>" +
+                        // "<div>" + item.time + "</div><hr/>");
+                        "<tr>"+
+                        "<td><img src="+item.com_image+" alt='User Avatar' class='img-circle' style='height: 80px;width: 80px'/></td>"+
+                        "<td>"+item.com_class+"</td>"+
+                        "<td>"+item.com_id+"</td>"+
+                        "<td>"+item.com_name+"</td>"+
+                        "<td>"+item.com_package+"</td>"+
+                        "<td>"+item.com_pkgmeas+"</td>"+
+                        "<td>"+item.com_taxin+"</td>"
+                    )
+                });
+            }
+
+        },
+        error:function () {
+            alert("AJAX请求失败");
+        }
+    })
+
+}
+
+/*
+*
+* function:上传文件控制
+* */
+
+$('input[id=lefile]').change(function() {
+    $('#photoCover').val($(this).val());
+});
 
 $(document).ready(function () {
 
